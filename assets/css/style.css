@@ -1,0 +1,779 @@
+/* 
+    Vinyl Record Store & Listening Bar
+    Theme: Retro-Modern / Nostalgic / Premium
+    Main CSS
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-color: #0c0c0c;
+    --card-bg: #1a1a1a;
+    --accent-gold: #d4af37;
+    --accent-orange: #ff8c00;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --nav-height: 85px;
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode {
+    --bg-color: #f4f4f4;
+    --card-bg: #ffffff;
+    --text-primary: #121212;
+    --text-secondary: #555555;
+    --border-color: rgba(0, 0, 0, 0.15);
+}
+
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    padding-top: var(--nav-height);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent-gold);
+    z-index: 10001;
+    transition: width 0.1s;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: var(--accent-gold);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #fff;
+    color: var(--accent-gold);
+}
+
+h1, h2, h3, .brand-font, .navbar-brand {
+    font-family: 'Outfit', sans-serif;
+}
+
+a {
+    transition: var(--transition-smooth);
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+}
+
+body.light-mode a:hover {
+    color: #000;
+}
+
+/* Animations */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header Styles */
+.navbar {
+    height: var(--nav-height);
+    transition: var(--transition-smooth);
+    background: var(--bg-color) !important;
+    border-bottom: 2px solid var(--border-color);
+    padding: 0;
+}
+
+.navbar.sticky-active {
+    background: var(--bg-color);
+    backdrop-filter: blur(15px);
+    height: 75px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    color: var(--text-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    letter-spacing: 1px;
+    transition: none !important;
+    text-transform: uppercase;
+}
+
+.navbar-brand i {
+    font-size: 1.8rem !important;
+    color: var(--accent-gold) !important;
+    margin-right: 0.5rem;
+    transition: none !important;
+}
+
+.navbar-brand span:not(.accent-text) {
+    color: var(--text-primary) !important;
+}
+
+.navbar-brand .accent-text {
+    color: var(--accent-gold) !important;
+}
+
+.nav-link {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1.2rem !important;
+    font-size: 1.05rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 1.2rem;
+    right: 1.2rem;
+    height: 3px;
+    background: var(--accent-gold);
+    transform: scaleX(0);
+    transition: var(--transition-smooth);
+    transform-origin: right;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link.active {
+    color: var(--accent-gold) !important;
+}
+
+.login-btn, .signup-btn {
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+    background: transparent;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+.signup-btn {
+    background: var(--accent-gold);
+    color: #0c0c0c !important;
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background: var(--accent-gold);
+    color: #0c0c0c !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.signup-btn:hover {
+    background: transparent;
+    color: var(--accent-gold) !important;
+}
+
+.theme-toggle-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+    background: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
+    transform: rotate(30deg);
+}
+
+body.light-mode .btn-outline-light {
+    border-color: #121212 !important;
+    color: #121212 !important;
+}
+
+body.light-mode .btn-outline-light:hover {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+/* Universal Button Styling & Hover Effects */
+.btn {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.btn-lg {
+    font-size: 1rem;
+    padding: 14px 40px !important;
+}
+
+.btn-warning {
+    background: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    color: #000 !important;
+}
+
+.btn-warning:hover {
+    background: var(--accent-orange) !important;
+    border-color: var(--accent-orange) !important;
+    color: #fff !important;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 140, 0, 0.4);
+}
+
+.btn-outline-light:hover {
+    background: #fff !important;
+    color: #000 !important;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-warning {
+    border-width: 2px !important;
+}
+
+.btn-outline-warning:hover {
+    background: var(--accent-gold) !important;
+    color: #000 !important;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* Hero Sections */
+.hero-section {
+    height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: var(--transition-smooth);
+    background-color: var(--bg-color);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+body.light-mode .hero-section::before {
+    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0.2));
+}
+
+body.light-mode .hero-section {
+    filter: brightness(1.1);
+}
+
+.glass-hero-box {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+body.light-mode .glass-hero-box {
+    background: rgba(255, 255, 255, 0.65);
+    border-color: rgba(0,0,0,0.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 100px 0;
+}
+
+/* Side-by-Side Image Utilities */
+.full-height-image-container {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-height-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    flex-grow: 1;
+}
+
+@media (max-width: 991.98px) {
+    .full-height-image-container {
+        min-height: 300px;
+        margin-bottom: 2rem;
+    }
+}
+
+.hero-title {
+    font-size: 5.5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #fff !important;
+}
+
+.accent-text {
+    color: var(--accent-gold);
+}
+
+/* Card Styles */
+.record-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    height: 100%;
+    color: var(--text-primary);
+}
+
+.record-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    border-color: var(--accent-gold);
+}
+
+.card-img-top {
+    height: 380px;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.record-card:hover .card-img-top {
+    transform: scale(1.08);
+}
+
+.record-img-wrapper {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.record-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.record-info {
+    padding: 2rem;
+}
+
+.arrival-img {
+    height: 320px !important;
+    width: 100%;
+    object-fit: cover;
+}
+
+.selector-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Special Glass Cards for Parallax/Hero Overlays */
+.glass-event-card {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px;
+    padding: 2.5rem;
+    height: 100%;
+    transition: var(--transition-smooth);
+    color: #ffffff !important;
+}
+
+.glass-event-card p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.light-mode .glass-event-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+}
+
+body.light-mode .glass-event-card,
+body.light-mode .glass-event-card h1,
+body.light-mode .glass-event-card h2,
+body.light-mode .glass-event-card h3,
+body.light-mode .glass-event-card h4,
+body.light-mode .glass-event-card h5,
+body.light-mode .glass-event-card h6 {
+    color: #121212 !important;
+}
+
+body.light-mode .glass-event-card p {
+    color: #444444 !important;
+}
+
+.glass-event-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-gold) !important;
+}
+.parallax-section {
+    background-attachment: fixed;
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #ffffff !important;
+}
+
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.parallax-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Event Cards */
+.event-card {
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 25px;
+    transition: var(--transition-smooth);
+    color: var(--text-primary);
+}
+
+.event-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateX(10px);
+}
+
+/* Auth Pages */
+.auth-page {
+    background: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-card {
+    background: var(--card-bg);
+    padding: 4rem;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+    border: 1px solid var(--border-color);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+    border-radius: 30px;
+    text-align: center;
+    transition: var(--transition-smooth);
+    height: 100%;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-gold);
+}
+
+.testimonial-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 3px solid var(--accent-gold);
+    padding: 3px;
+    display: inline-block;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* Footer Section Protection fix for cards */
+body.light-mode .testimonial-card * {
+    color: var(--text-primary) !important;
+}
+
+body.light-mode .testimonial-card .text-white-50 {
+    color: var(--text-secondary) !important;
+}
+
+/* Footer */
+footer {
+    background: var(--card-bg);
+    padding: 85px 0 35px;
+    margin-top: 55px;
+    color: var(--text-primary);
+    border-top: 2px solid var(--border-color);
+}
+
+footer a, .footer-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+footer a:hover, .footer-link:hover {
+    color: var(--accent-gold);
+}
+
+.footer-link {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer-link:hover {
+    color: var(--accent-gold);
+    padding-left: 8px;
+}
+
+/* -------------------------------------------
+   LIGHT MODE OVERRIDES
+------------------------------------------- */
+body.light-mode .text-white,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode marquee,
+body.light-mode .navbar-brand .text-white,
+body.light-mode .navbar-brand .fw-bold {
+    color: var(--text-primary) !important;
+}
+
+body.light-mode .text-white-50 {
+    color: var(--text-secondary) !important;
+}
+
+body.light-mode .btn-outline-light {
+    color: var(--text-primary) !important;
+    border-color: var(--text-primary) !important;
+}
+
+body.light-mode .btn-outline-light:hover {
+    background-color: var(--text-primary) !important;
+    color: var(--bg-color) !important;
+}
+
+/* -------------------------------------------
+   DARK-SECTION PROTECTION (MAX PRIORITY)
+   Ensures text stays white on images
+------------------------------------------- */
+.hero-section {
+    color: #ffffff;
+}
+
+body.light-mode .hero-section,
+body.light-mode .hero-section * {
+    color: var(--text-primary) !important;
+}
+
+.parallax-section {
+    color: #ffffff !important;
+}
+
+body.light-mode .parallax-section,
+body.light-mode .parallax-section *:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
+body.light-mode .parallax-section h1:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
+body.light-mode .parallax-section h2:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
+body.light-mode .parallax-section p:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
+body.light-mode .parallax-section .text-white:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *) {
+    color: #ffffff !important;
+}
+
+.hero-section *, 
+.parallax-section *:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *) {
+    color: #ffffff;
+}
+
+/* BUT Cards inside those sections must still follow the theme */
+.record-card *, .event-card * {
+    color: var(--text-primary) !important;
+}
+
+body.light-mode .record-card *,
+body.light-mode .event-card *,
+body.light-mode .col-md-3 p {
+    color: var(--text-primary) !important;
+}
+
+body.light-mode .record-card .text-white-50,
+body.light-mode .event-card .text-white-50,
+body.light-mode .col-md-3 .text-white-50,
+body.light-mode .record-card p,
+body.light-mode .event-card p {
+    color: var(--text-secondary) !important;
+}
+
+/* Restore gold accent in cards */
+body.light-mode .record-card .accent-text,
+body.light-mode .event-card .accent-text {
+    color: var(--accent-gold) !important;
+}
+
+/* Section BG Adjustments */
+body.light-mode .bg-dark,
+body.light-mode .bg-black {
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Modal Styling */
+.modal-content {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+}
+
+.modal-header, .modal-footer {
+    border-color: var(--border-color);
+}
+
+/* Form Controls */
+.form-control {
+    background: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.form-control:focus {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Responsive Overrides */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .nav-link {
+        padding: 0.5rem 0.7rem !important;
+        font-size: 0.95rem;
+    }
+    .navbar-brand span {
+        font-size: 1.2rem !important;
+    }
+    .navbar-collapse .gap-2 {
+        gap: 0.35rem !important;
+    }
+    .login-btn, .signup-btn {
+        padding: 8px 15px;
+        font-size: 0.75rem;
+    }
+    .theme-toggle-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-title { font-size: 3.5rem; }
+    .navbar-collapse {
+        background: var(--card-bg);
+        margin: 1rem -1rem;
+        padding: 1rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .nav-link::after { display: none; }
+}
+
+@media (max-width: 767.98px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-section { height: auto; padding: 100px 0; }
+    .parallax-section { height: auto; padding: 80px 0; }
+}

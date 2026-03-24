@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Experience | Vinyl Vibes</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body id="home-2">
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top sticky-active">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <i class="bi bi-record-circle-fill me-2 fs-3 accent-text"></i>
+                    <span class="fw-bold fs-4">VINYL <span class="accent-text">VIBES</span></span>
+                </a>
+                <div class="d-flex align-items-center ms-auto">
+                    <button id="themeToggle" class="theme-toggle-btn border-0 me-2">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navContent">
+                        <span class="bi bi-list text-white fs-2"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="#" id="rtlToggle" class="btn btn-outline-light rounded-pill px-3 py-1 btn-sm">
+                            <span id="rtlText" class="fw-bold">RTL</span>
+                        </a>
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="signup.html" class="signup-btn">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section"
+        style="background-image: url('https://images.pexels.com/photos/6173824/pexels-photo-6173824.jpeg');">
+        <div class="container hero-content text-center">
+            <div data-aos="fade-up">
+                <span class="text-uppercase accent-text fw-bold ls-5 d-block mb-3">Premium Hospitality</span>
+                <h1 class="hero-title fw-bold text-white display-2">THE LISTENING BAR</h1>
+                <p class="lead text-white-50 mx-auto" style="max-width: 700px;">Crafting the perfect blend of
+                    high-fidelity audio and expertly mixed spirits in an intimate setting.</p>
+                <a href="#menu" class="btn btn-warning btn-lg rounded-pill px-5 fw-bold mt-4">Browse Cocktail Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. The Sound System -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row align-items-stretch g-0 rounded-4 overflow-hidden shadow-lg glass-event-card p-0" data-aos="zoom-in">
+                        <div class="col-lg-5 d-flex align-items-stretch">
+                            <div class="full-height-image-container position-relative w-100">
+                                <img src="https://images.pexels.com/photos/1726496/pexels-photo-1726496.jpeg"
+                                    class="full-height-img" alt="Sound">
+                                <div class="position-absolute bottom-0 end-0 p-3 bg-warning text-dark fw-bold rounded-start-4 shadow-sm smaller" style="z-index: 5;">
+                                    McIntosh Audio System</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 d-flex align-items-center">
+                            <div class="p-4 p-md-5">
+                                <span class="accent-text fw-bold small">UNCOMPROMISED QUALITY</span>
+                                <h2 class="display-5 fw-bold mt-2">Audiophile Paradise</h2>
+                                <p class="text-white-50 mt-3">Every component in our system is hand-selected to deliver the
+                                    most authentic analog experience. From vacuum tube amplifiers to custom-built speakers,
+                                    every note is felt as much as it is heard.</p>
+                                <ul class="list-unstyled mt-4">
+                                    <li class="mb-2 d-flex align-items-center"><i
+                                            class="bi bi-check-circle-fill accent-text me-3 fs-5"></i> High-End MC Cartridges
+                                    </li>
+                                    <li class="mb-2 d-flex align-items-center"><i
+                                            class="bi bi-check-circle-fill accent-text me-3 fs-5"></i> Custom Acoustic Treatment
+                                    </li>
+                                    <li class="mb-2 d-flex align-items-center"><i
+                                            class="bi bi-check-circle-fill accent-text me-3 fs-5"></i> Pure Analog Signal Path
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Drink Menu -->
+    <section id="menu" class="py-5 bg-dark">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-4 fw-bold">Selection of Spirits</h2>
+                <div class="mx-auto" style="width: 80px; height: 3px; background: var(--accent-gold);"></div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="record-card border-0">
+                        <img src="https://images.pexels.com/photos/8084686/pexels-photo-8084686.jpeg"
+                            class="card-img-top" alt="Cocktail">
+                        <div class="record-info">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h4 class="fw-bold mb-0">The Velvet Track</h4>
+                                <span class="accent-text fw-bold">$16</span>
+                            </div>
+                            <p class="text-white-50">Smoked Bourbon, Spiced Vermouth, Orange Bitters, Flamed Rosemary.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="record-card border-0">
+                        <img src="https://images.pexels.com/photos/29707900/pexels-photo-29707900.jpeg"
+                            class="card-img-top" alt="Cocktail">
+                        <div class="record-info">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h4 class="fw-bold mb-0">B-Side Negroni</h4>
+                                <span class="accent-text fw-bold">$14</span>
+                            </div>
+                            <p class="text-white-50">Gin, Campari, Coffee-infused Sweet Vermouth, Dark Chocolate
+                                Shavings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="record-card border-0">
+                        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Cocktail">
+                        <div class="record-info">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h4 class="fw-bold mb-0">Groove Spritz</h4>
+                                <span class="accent-text fw-bold">$12</span>
+                            </div>
+                            <p class="text-white-50">Prosecco, Peach Liqueur, Fresh Basil, Soda water, Lemon zest.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Resident DJs -->
+    <section class="py-5">
+        <div class="container py-5 text-center">
+            <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Master Selectors</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up">
+                    <img src="https://images.pexels.com/photos/2381596/pexels-photo-2381596.jpeg"
+                        class="img-fluid rounded-circle mb-3 p-2 bg-warning selector-img" width="200" alt="DJ">
+                    <h5 class="fw-bold">DJ Soulman</h5>
+                    <p class="text-white-50 small">Funk & Rare Grooves</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.pexels.com/photos/359995/pexels-photo-359995.jpeg"
+                        class="img-fluid rounded-circle mb-3 p-2 bg-warning selector-img" width="200" alt="DJ">
+                    <h5 class="fw-bold">Selector Sam</h5>
+                    <p class="text-white-50 small">Japanese Ambient & Jazz</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.pexels.com/photos/358129/pexels-photo-358129.jpeg"
+                        class="img-fluid rounded-circle mb-3 p-2 bg-warning selector-img" width="200" alt="DJ">
+                    <h5 class="fw-bold">Mystic M</h5>
+                    <p class="text-white-50 small">Detroit Techno & Deep House</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.pexels.com/photos/11703468/pexels-photo-11703468.jpeg"
+                        class="img-fluid rounded-circle mb-3 p-2 bg-warning selector-img" width="200" alt="DJ">
+                    <h5 class="fw-bold">Vinyl Vera</h5>
+                    <p class="text-white-50 small">70s Psych Rock</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Listening Booths -->
+    <section class="py-5 bg-dark">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row align-items-stretch g-0 rounded-4 overflow-hidden shadow-lg glass-event-card p-0" data-aos="zoom-in">
+                        <div class="col-lg-5 order-lg-2 d-flex align-items-stretch">
+                            <div class="full-height-image-container w-100">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80"
+                                    class="full-height-img" alt="Booths">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 order-lg-1 d-flex align-items-center">
+                            <div class="p-4 p-md-5">
+                                <h2 class="display-5 fw-bold mb-4">Private Listening</h2>
+                                <p class="text-white-50">Prefer a solo experience? Reserve one of our dedicated listening booths
+                                    where you can pick any record from our collection and listen privately on reference-grade
+                                    Sennheiser headphones.</p>
+                                <button class="btn btn-outline-warning rounded-pill px-4 mt-3">Reserve a Booth</button>
+                                <div class="row mt-5">
+                                    <div class="col-4">
+                                        <h3 class="fw-bold accent-text mb-0">12</h3>
+                                        <span class="text-white-50 small">Booths</span>
+                                    </div>
+                                    <div class="col-4 border-start border-secondary">
+                                        <h3 class="fw-bold accent-text mb-0">5k+</h3>
+                                        <span class="text-white-50 small">Records</span>
+                                    </div>
+                                    <div class="col-4 border-start border-secondary">
+                                        <h3 class="fw-bold accent-text mb-0">1</h3>
+                                        <span class="text-white-50 small">Experience</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CTA -->
+    <section class="py-5 parallax-section"
+        style="background-image: url('https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=1920&q=80');">
+        <div class="container py-5 text-center" data-aos="zoom-in">
+            <div class="glass-event-card" data-aos="zoom-in">
+                <h2 class="display-3 fw-bold mb-4">Ready to feel the music?</h2>
+                <p class="lead mb-5 px-lg-5">Join us tonight for the best cocktails and analog tunes in the city.
+                    Walk-ins always welcome, but reservations recommended.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="contact.html" class="btn btn-warning btn-lg rounded-pill px-5">Get Directions</a>
+                    <a href="events.html" class="btn btn-outline-warning btn-lg rounded-pill px-5 theme-btn-outline">Book Event</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer same as Home 1 -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+                        <i class="bi bi-record-circle-fill me-2 fs-3 accent-text"></i>
+                        <span class="fw-bold fs-4">VINYL <span class="accent-text">VIBES</span></span>
+                    </a>
+                    <p class="text-white-50">Connecting music lovers through the timeless experience of analog sound and
+                        premium hospitality.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="shop.html" class="footer-link">Shop Records</a>
+                    <a href="events.html" class="footer-link">Upcoming Events</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Services</h5>
+                    <a href="#" class="footer-link">Record Cleaning</a>
+                    <a href="#" class="footer-link">Bar Reservation</a>
+                    <a href="#" class="footer-link">Private Events</a>
+                    <a href="login.html" class="footer-link">Member Area</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p class="text-white-50">Join our mailing list for drop alerts and secret events.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control bg-dark border-secondary text-white"
+                                placeholder="Enter Email">
+                            <button class="btn btn-warning px-4" type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-0">&copy; 2026 Vinyl Vibes. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white-50 text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="#" class="text-white-50 text-decoration-none small">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
