@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollProgress();
     initBackToTop();
     initActiveNav();
-    initOfferModal();
+    initCart();
     initShopSearch();
 });
 
@@ -62,29 +62,31 @@ function updateRTLButton(dir) {
  * Theme Toggle Support
  */
 function initTheme() {
-    const themeBtn = document.getElementById('themeToggle');
-    if (!themeBtn) return;
+    const themeBtns = document.querySelectorAll('.theme-toggle-btn');
+    if (!themeBtns.length) return;
 
     // Check saved state
     const currentTheme = localStorage.getItem('siteTheme') || 'dark';
     if (currentTheme === 'light') {
         document.body.classList.add('light-mode');
-        updateThemeIcon('light');
+        updateAllThemeIcons('light');
     }
 
-    themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const isLight = document.body.classList.contains('light-mode');
-        localStorage.setItem('siteTheme', isLight ? 'light' : 'dark');
-        updateThemeIcon(isLight ? 'light' : 'dark');
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('siteTheme', isLight ? 'light' : 'dark');
+            updateAllThemeIcons(isLight ? 'light' : 'dark');
+        });
     });
 }
 
-function updateThemeIcon(theme) {
-    const icon = document.querySelector('#themeToggle i');
-    if (icon) {
+function updateAllThemeIcons(theme) {
+    const icons = document.querySelectorAll('.theme-toggle-btn i');
+    icons.forEach(icon => {
         icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    }
+    });
 }
 
 /**
@@ -108,19 +110,7 @@ function initAnimations() {
     });
 }
 
-/**
- * Pop-up Modal Logic
- */
-function initOfferModal() {
-    // Only show on home page if not shown before in this session
-    if (document.body.id === 'home-1' && !sessionStorage.getItem('modalShown')) {
-        setTimeout(() => {
-            const offerModal = new bootstrap.Modal(document.getElementById('offerModal'));
-            offerModal.show();
-            sessionStorage.setItem('modalShown', 'true');
-        }, 3000);
-    }
-}
+
 
 /**
  * Shop Search & Filter
@@ -230,4 +220,62 @@ function initActiveNav() {
             link.classList.remove('active');
         }
     });
+
 }
+
+/**
+ * Cart Functionality
+ */
+function initCart() {
+    let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+    updateCartUI(cartCount);
+
+    // Create Toast if it doesn't exist
+    if (!document.getElementById('cart-toast')) {
+        const toast = document.createElement('div');
+        toast.id = 'cart-toast';
+        toast.innerHTML = `
+            <i class="bi bi-check-circle-fill"></i>
+            <div>
+                <strong class="d-block">Added to Collection</strong>
+                <span class="small opacity-75">Record added to your basket</span>
+            </div>
+        `;
+        document.body.appendChild(toast);
+    }
+
+    // Add event listeners to all cart buttons
+    document.addEventListener('click', (e) => {
+        const cartBtn = e.target.closest('button');
+        if (cartBtn && cartBtn.querySelector('.bi-cart') && !cartBtn.classList.contains('cart-btn')) {
+            cartCount++;
+            localStorage.setItem('cartCount', cartCount);
+            updateCartUI(cartCount);
+            showCartToast();
+        }
+    });
+}
+
+function updateCartUI(count) {
+    const badges = document.querySelectorAll('.cart-badge');
+    badges.forEach(badge => {
+        badge.textContent = count;
+        // Also ensure badge is shown if count > 0
+        if(count > 0) {
+           badge.style.display = 'flex';
+        } else {
+           badge.style.display = 'none';
+        }
+    });
+}
+
+function showCartToast() {
+    const toast = document.getElementById('cart-toast');
+    if(toast) {
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+}
+

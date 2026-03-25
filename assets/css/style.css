@@ -777,3 +777,63 @@ body.light-mode .bg-black {
     .hero-section { height: auto; padding: 100px 0; }
     .parallax-section { height: auto; padding: 80px 0; }
 }
+
+/* Cart Icon & Counter */
+.cart-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    position: relative;
+    padding: 0 10px;
+    transition: var(--transition-smooth);
+}
+
+.cart-btn:hover {
+    color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Toast Notification */
+#cart-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--accent-gold);
+    color: var(--text-primary);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transform: translateX(-150%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10000;
+}
+
+#cart-toast.show {
+    transform: translateX(0);
+}
+
+#cart-toast i {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+}
