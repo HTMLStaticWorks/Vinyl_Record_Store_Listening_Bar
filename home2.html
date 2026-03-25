@@ -45,7 +45,7 @@
                         <button class="theme-toggle-btn border-0 d-none d-lg-flex">
                             <i class="bi bi-sun-fill"></i>
                         </button>
-                        <a href="#" id="rtlToggle" class="btn btn-outline-light rounded-pill px-3 py-1 btn-sm">
+                        <a href="#" id="rtlToggle" class="rtl-btn">
                             <span id="rtlText" class="fw-bold">RTL</span>
                         </a>
                         <a href="login.html" class="login-btn">Login</a>
@@ -75,7 +75,7 @@
         <div class="container py-4">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="row align-items-stretch g-0 rounded-4 overflow-hidden shadow-lg glass-event-card p-0" data-aos="zoom-in">
+                    <div class="row align-items-stretch g-0 rounded-4 overflow-hidden shadow-lg glass-event-card p-0 audiophile-card" data-aos="zoom-in">
                         <div class="col-lg-5 d-flex align-items-stretch">
                             <div class="full-height-image-container position-relative w-100">
                                 <img src="https://images.pexels.com/photos/1726496/pexels-photo-1726496.jpeg"
@@ -85,23 +85,24 @@
                             </div>
                         </div>
                         <div class="col-lg-7 d-flex align-items-center">
-                            <div class="p-4 p-md-5">
+                            <div class="p-4 p-md-4">
                                 <span class="accent-text fw-bold small">UNCOMPROMISED QUALITY</span>
                                 <h2 class="display-5 fw-bold mt-2">Audiophile Paradise</h2>
                                 <p class="text-white-50 mt-3">Every component in our system is hand-selected to deliver the
                                     most authentic analog experience. From vacuum tube amplifiers to custom-built speakers,
                                     every note is felt as much as it is heard.</p>
                                 <ul class="list-unstyled mt-4">
-                                    <li class="mb-2 d-flex align-items-center"><i
-                                            class="bi bi-check-circle-fill accent-text me-3 fs-5"></i> High-End MC Cartridges
+                                    <li class="mb-2 d-flex align-items-center smaller"><i
+                                            class="bi bi-check-circle-fill accent-text me-3 fs-6"></i> High-End MC Cartridges
                                     </li>
-                                    <li class="mb-2 d-flex align-items-center"><i
-                                            class="bi bi-check-circle-fill accent-text me-3 fs-5"></i> Custom Acoustic Treatment
+                                    <li class="mb-2 d-flex align-items-center smaller"><i
+                                            class="bi bi-check-circle-fill accent-text me-3 fs-6"></i> Custom Acoustic Treatment
                                     </li>
-                                    <li class="mb-2 d-flex align-items-center"><i
-                                            class="bi bi-check-circle-fill accent-text me-3 fs-5"></i> Pure Analog Signal Path
+                                    <li class="mb-2 d-flex align-items-center smaller"><i
+                                            class="bi bi-check-circle-fill accent-text me-3 fs-6"></i> Pure Analog Signal Path
                                     </li>
                                 </ul>
+                                <a href="about.html" class="btn btn-outline-warning rounded-pill mt-4 px-4 fw-bold">See Our Hardware</a>
                             </div>
                         </div>
                     </div>
@@ -123,9 +124,9 @@
                         <img src="https://images.pexels.com/photos/8084686/pexels-photo-8084686.jpeg"
                             class="card-img-top" alt="Cocktail">
                         <div class="record-info">
-                            <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="fw-bold mb-0">The Velvet Track</h4>
-                                <span class="accent-text fw-bold">$16</span>
+                                <span class="price-badge">$16</span>
                             </div>
                             <p class="text-white-50">Smoked Bourbon, Spiced Vermouth, Orange Bitters, Flamed Rosemary.
                             </p>
@@ -137,9 +138,9 @@
                         <img src="https://images.pexels.com/photos/29707900/pexels-photo-29707900.jpeg"
                             class="card-img-top" alt="Cocktail">
                         <div class="record-info">
-                            <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="fw-bold mb-0">B-Side Negroni</h4>
-                                <span class="accent-text fw-bold">$14</span>
+                                <span class="price-badge">$14</span>
                             </div>
                             <p class="text-white-50">Gin, Campari, Coffee-infused Sweet Vermouth, Dark Chocolate
                                 Shavings.
@@ -149,14 +150,15 @@
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="record-card border-0">
-                        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80"
+                        <img src="https://images.pexels.com/photos/1036445/pexels-photo-1036445.jpeg"
                             class="card-img-top" alt="Cocktail">
                         <div class="record-info">
-                            <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="fw-bold mb-0">Groove Spritz</h4>
-                                <span class="accent-text fw-bold">$12</span>
+                                <span class="price-badge">$12</span>
                             </div>
-                            <p class="text-white-50">Prosecco, Peach Liqueur, Fresh Basil, Soda water, Lemon zest.</p>
+                            <p class="text-white-50">Prosecco, Peach Liqueur, Fresh Basil, Soda water, Lemon zest.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -199,36 +201,34 @@
 
     <!-- 5. Listening Booths -->
     <section class="py-5 bg-dark">
-        <div class="container py-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="row align-items-stretch g-0 rounded-4 overflow-hidden shadow-lg glass-event-card p-0" data-aos="zoom-in">
-                        <div class="col-lg-5 order-lg-2 d-flex align-items-stretch">
-                            <div class="full-height-image-container w-100">
-                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80"
-                                    class="full-height-img" alt="Booths">
-                            </div>
-                        </div>
-                        <div class="col-lg-7 order-lg-1 d-flex align-items-center">
-                            <div class="p-4 p-md-5">
-                                <h2 class="display-5 fw-bold mb-4">Private Listening</h2>
-                                <p class="text-white-50">Prefer a solo experience? Reserve one of our dedicated listening booths
-                                    where you can pick any record from our collection and listen privately on reference-grade
-                                    Sennheiser headphones.</p>
-                                <button class="btn btn-outline-warning rounded-pill px-4 mt-3">Reserve a Booth</button>
-                                <div class="row mt-5">
-                                    <div class="col-4">
-                                        <h3 class="fw-bold accent-text mb-0">12</h3>
-                                        <span class="text-white-50 small">Booths</span>
-                                    </div>
-                                    <div class="col-4 border-start border-secondary">
-                                        <h3 class="fw-bold accent-text mb-0">5k+</h3>
-                                        <span class="text-white-50 small">Records</span>
-                                    </div>
-                                    <div class="col-4 border-start border-secondary">
-                                        <h3 class="fw-bold accent-text mb-0">1</h3>
-                                        <span class="text-white-50 small">Experience</span>
-                                    </div>
+        <div class="container-fluid p-0">
+            <div class="row g-0 align-items-stretch glass-event-card p-0 border-0 rounded-0" data-aos="fade-up">
+                <div class="col-lg-5 order-lg-2 d-flex align-items-stretch">
+                    <div class="full-height-image-container w-100">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            class="full-height-img" alt="Booths">
+                    </div>
+                </div>
+                <div class="col-lg-7 order-lg-1 d-flex align-items-center">
+                    <div class="p-4 p-md-5 w-100 h-100 d-flex flex-column justify-content-center">
+                        <div style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                            <h2 class="display-3 fw-bold mb-4">Private Listening</h2>
+                            <p class="text-white-50 fs-5 mb-4">Prefer a solo experience? Reserve one of our dedicated listening booths
+                                where you can pick any record from our collection and listen privately on reference-grade
+                                Sennheiser headphones.</p>
+                            <button class="btn btn-warning rounded-pill px-5 py-3 fw-bold mt-3">RESERVE A BOOTH</button>
+                            <div class="row mt-5 pt-4 border-top border-secondary">
+                                <div class="col-4">
+                                    <h2 class="fw-bold accent-text mb-0">12</h2>
+                                    <span class="text-white-50">Booths</span>
+                                </div>
+                                <div class="col-4 border-start border-secondary">
+                                    <h2 class="fw-bold accent-text mb-0">5k+</h2>
+                                    <span class="text-white-50">Records</span>
+                                </div>
+                                <div class="col-4 border-start border-secondary">
+                                    <h2 class="fw-bold accent-text mb-0">1</h2>
+                                    <span class="text-white-50">Experience</span>
                                 </div>
                             </div>
                         </div>
@@ -239,16 +239,16 @@
     </section>
 
     <!-- 6. CTA -->
-    <section class="py-5 parallax-section"
+    <section class="py-4 parallax-section"
         style="background-image: url('https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=1920&q=80');">
-        <div class="container py-5 text-center" data-aos="zoom-in">
-            <div class="glass-event-card" data-aos="zoom-in">
-                <h2 class="display-3 fw-bold mb-4">Ready to feel the music?</h2>
+        <div class="container py-3 text-center" data-aos="zoom-in">
+            <div class="glass-event-card mx-auto" style="max-width: 850px;" data-aos="zoom-in">
+                <h2 class="display-4 fw-bold mb-4">Ready to feel the music?</h2>
                 <p class="lead mb-5 px-lg-5">Join us tonight for the best cocktails and analog tunes in the city.
                     Walk-ins always welcome, but reservations recommended.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="contact.html" class="btn btn-warning btn-lg rounded-pill px-5">Get Directions</a>
-                    <a href="events.html" class="btn btn-outline-warning btn-lg rounded-pill px-5 theme-btn-outline">Book Event</a>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 px-3">
+                    <a href="contact.html" class="btn btn-warning btn-lg rounded-pill px-5">GET DIRECTIONS</a>
+                    <a href="events.html" class="btn btn-outline-warning btn-lg rounded-pill px-5 theme-btn-outline">BOOK EVENT</a>
                 </div>
             </div>
         </div>
@@ -266,20 +266,20 @@
                     <p class="text-white-50">Connecting music lovers through the timeless experience of analog sound and
                         premium hospitality.</p>
                     <div class="d-flex gap-3 mt-4">
-                        <a href="#" class="fs-4"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="fs-4"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 small text-uppercase ls-1">Quick Links</h5>
                     <a href="about.html" class="footer-link">About Us</a>
                     <a href="shop.html" class="footer-link">Shop Records</a>
                     <a href="events.html" class="footer-link">Upcoming Events</a>
                     <a href="contact.html" class="footer-link">Contact</a>
                 </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-4">Services</h5>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 small text-uppercase ls-1">Services</h5>
                     <a href="#" class="footer-link">Record Cleaning</a>
                     <a href="#" class="footer-link">Bar Reservation</a>
                     <a href="#" class="footer-link">Private Events</a>
@@ -290,7 +290,7 @@
                     <p class="text-white-50">Join our mailing list for drop alerts and secret events.</p>
                     <form class="mt-3">
                         <div class="input-group">
-                            <input type="email" class="form-control bg-dark border-secondary text-white"
+                            <input type="email" class="form-control"
                                 placeholder="Enter Email">
                             <button class="btn btn-warning px-4" type="submit">Join</button>
                         </div>

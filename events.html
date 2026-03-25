@@ -45,7 +45,7 @@
                         <button class="theme-toggle-btn border-0 d-none d-lg-flex">
                             <i class="bi bi-sun-fill"></i>
                         </button>
-                        <a href="#" id="rtlToggle" class="btn btn-outline-light rounded-pill px-3 py-1 btn-sm">
+                        <a href="#" id="rtlToggle" class="rtl-btn">
                             <span id="rtlText" class="fw-bold">RTL</span>
                         </a>
                         <a href="login.html" class="login-btn">Login</a>
@@ -57,12 +57,20 @@
     </header>
 
     <!-- 1. Hero Section -->
-    <section class="hero-section" style="background-image: url('assets/images/event_hero.png'); height: 60vh;">
+    <section class="hero-section position-relative overflow-hidden"
+        style="background-image: url('assets/images/event_hero.png'); height: 70vh;">
         <div class="container hero-content text-center">
             <div data-aos="fade-up">
-                <h1 class="display-2 fw-bold text-white">LIVE SELECTORS</h1>
-                <p class="lead text-white-50">Curated vinyl-only sets and live performances by local and international
-                    talent.</p>
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-4 fw-bold shadow-sm">SPRING LINEUP NOW LIVE</span>
+                <h1 class="display-1 fw-bold text-white mb-3">LIVE SELECTORS</h1>
+                <p class="lead text-white mb-5 mx-auto" style="max-width: 800px; opacity: 0.9;">
+                    Immerse yourself in curated vinyl-only sets and high-fidelity live performances. 
+                    From experimental jazz to rare soul, we host the sessions that define modern record culture and analog appreciation.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="#upcoming-events" class="btn btn-warning btn-lg rounded-pill px-5 fw-bold shadow-lg">View Schedule</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg rounded-pill px-5">Host Private Event</a>
+                </div>
             </div>
         </div>
     </section>
@@ -70,85 +78,87 @@
     <!-- 2. Upcoming Lineup -->
     <section class="py-5">
         <div class="container py-5">
-            <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Upcoming Sets</h2>
+            <h2 class="display-4 fw-bold mb-5 text-center" data-aos="fade-up" id="upcoming-events">Upcoming Sets</h2>
             <div class="row g-4">
                 <!-- Event 1 -->
                 <div class="col-12" data-aos="fade-up">
                     <div class="event-card">
                         <div class="row align-items-center">
-                            <div class="col-md-2 text-center border-end border-secondary">
+                            <div class="col-md-2 text-center border-md-end border-secondary mb-3 mb-md-0">
                                 <span class="accent-text fw-bold h1 d-block mb-0">24</span>
                                 <span class="text-white-50 text-uppercase ls-2">Mar</span>
                             </div>
                             <div class="col-md-3">
-                                <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dee4f?auto=format&fit=crop&w=400&q=80"
-                                    class="img-fluid rounded-4 my-3 my-md-0" alt="DJ">
+                                <img src="https://images.pexels.com/photos/164745/pexels-photo-164745.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    class="img-fluid rounded-4 my-3 my-md-0 shadow-sm w-100" style="height: 150px; object-fit: cover;" alt="Deep House DJ">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mb-3 mb-md-0">
                                 <h3 class="fw-bold mb-1">Deep House Explorations</h3>
-                                <p class="accent-text mb-2">Resident: DJ Luna</p>
-                                <p class="text-white-50 small mb-0">A 4-hour sonic journey through deep house and
+                                <p class="accent-text mb-2 fw-bold small text-uppercase ls-1">Resident: DJ Luna</p>
+                                <p class="text-white-50 small mb-4 mb-md-0">A 4-hour sonic journey through deep house and
                                     Detroit techno, played exclusively on 12-inch wax.</p>
                             </div>
-                            <div class="col-md-3 text-md-end">
-                                <div class="mb-3">
-                                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">RSVP Open</span>
+                            <div class="col-md-3 text-md-end mt-2 mt-md-0">
+                                <div class="d-flex flex-column gap-2 mx-auto ms-md-auto align-items-stretch" style="max-width: 180px;">
+                                    <span class="btn btn-warning text-dark rounded-pill py-2 fw-bold disabled border-0 shadow-sm">RSVP OPEN</span>
+                                    <button class="btn btn-outline-light rounded-pill py-2">GET TICKET</button>
                                 </div>
-                                <button class="btn btn-outline-light rounded-pill px-4">Get Ticket</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Event 2 -->
                 <div class="col-12" data-aos="fade-up">
                     <div class="event-card">
                         <div class="row align-items-center">
-                            <div class="col-md-2 text-center border-end border-secondary">
+                            <div class="col-md-2 text-center border-md-end border-secondary mb-3 mb-md-0">
                                 <span class="accent-text fw-bold h1 d-block mb-0">28</span>
                                 <span class="text-white-50 text-uppercase ls-2">Mar</span>
                             </div>
                             <div class="col-md-3">
-                                <img src="https://images.unsplash.com/photo-1514525253344-a8135a43cf2e?auto=format&fit=crop&w=400&q=80"
-                                    class="img-fluid rounded-4 my-3 my-md-0" alt="DJ">
+                                <img src="https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    class="img-fluid rounded-4 my-3 my-md-0 shadow-sm w-100" style="height: 150px; object-fit: cover;" alt="Jazz Quartet">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mb-3 mb-md-0">
                                 <h3 class="fw-bold mb-1">The Jazz & Bourbon Sessions</h3>
-                                <p class="accent-text mb-2">Guest: The Smooth Quartet</p>
-                                <p class="text-white-50 small mb-0">Experience the velvet sound of live jazz accompanied
+                                <p class="accent-text mb-2 fw-bold small text-uppercase ls-1">Guest: The Smooth Quartet</p>
+                                <p class="text-white-50 small mb-4 mb-md-0">Experience the velvet sound of live jazz accompanied
                                     by our specialty bourbon cocktail menu.</p>
                             </div>
-                            <div class="col-md-3 text-md-end">
-                                <div class="mb-3">
-                                    <span class="badge bg-danger px-3 py-2 rounded-pill">Selling Fast</span>
+                            <div class="col-md-3 text-md-end mt-2 mt-md-0">
+                                <div class="d-flex flex-column gap-2 mx-auto ms-md-auto align-items-stretch" style="max-width: 180px;">
+                                    <span class="btn btn-warning text-dark rounded-pill py-2 fw-bold disabled border-0 shadow-sm">SELLING FAST</span>
+                                    <button class="btn btn-outline-light rounded-pill py-2">GET TICKET</button>
                                 </div>
-                                <button class="btn btn-outline-light rounded-pill px-4">Get Ticket</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Event 3 -->
                 <div class="col-12" data-aos="fade-up">
                     <div class="event-card">
                         <div class="row align-items-center">
-                            <div class="col-md-2 text-center border-end border-secondary">
+                            <div class="col-md-2 text-center border-md-end border-secondary mb-3 mb-md-0">
                                 <span class="accent-text fw-bold h1 d-block mb-0">02</span>
                                 <span class="text-white-50 text-uppercase ls-2">Apr</span>
                             </div>
                             <div class="col-md-3">
-                                <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=400&q=80"
-                                    class="img-fluid rounded-4 my-3 my-md-0" alt="DJ">
+                                <img src="https://images.pexels.com/photos/157534/pexels-photo-157534.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    class="img-fluid rounded-4 my-3 my-md-0 shadow-sm w-100" style="height: 150px; object-fit: cover;" alt="Tokyo Pop DJ">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mb-3 mb-md-0">
                                 <h3 class="fw-bold mb-1">Tokyo City Pop Night</h3>
-                                <p class="accent-text mb-2">Curated By: Neon Vibes</p>
+                                <p class="accent-text mb-2 fw-bold small text-uppercase ls-1">Curated By: Neon Vibes</p>
                                 <p class="text-white-50 small mb-0">Celebrating the 80s Japanese City Pop era with a
                                     curated selection of rare Tatsuro Yamashita and Mariya Takeuchi pressings.</p>
                             </div>
                             <div class="col-md-3 text-md-end">
-                                <div class="mb-3">
-                                    <span class="badge bg-secondary px-3 py-2 rounded-pill">Join Waitlist</span>
+                                <div class="d-flex flex-column gap-2 ms-md-auto align-items-stretch" style="max-width: 180px; margin-left: auto;">
+                                    <span class="btn btn-warning text-dark rounded-pill py-2 fw-bold disabled border-0 shadow-sm">WAITLIST</span>
+                                    <button class="btn btn-outline-light rounded-pill py-2">JOIN NOW</button>
                                 </div>
-                                <button class="btn btn-outline-light rounded-pill px-4">Join Now</button>
                             </div>
                         </div>
                     </div>
@@ -158,8 +168,7 @@
     </section>
 
     <!-- 3. Recurring Nights -->
-    <section class="py-5 parallax-section"
-        style="background-image: url('https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+    <section class="py-5 rituals-section">
         <div class="container py-5 text-center">
             <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Weekly Rituals</h2>
             <div class="row g-4">
@@ -192,7 +201,7 @@
     </section>
 
     <!-- 4. Booking -->
-    <section class="py-5 parallax-section"
+    <section class="py-5 parallax-section booking-section"
         style="background-image: url('https://images.unsplash.com/photo-1514525253344-a8135a43cf2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
         <div class="container py-5">
             <div class="glass-event-card" data-aos="zoom-in">
@@ -211,20 +220,6 @@
         </div>
     </section>
 
-    <!-- 5. CTA -->
-    <section class="py-5 bg-dark">
-        <div class="container py-5 text-center">
-            <h3 class="fw-bold mb-4" data-aos="fade-up">Stay Pulse</h3>
-            <p class="text-white-50 mb-4" data-aos="fade-up">Follow us for real-time updates on pop-up events and
-                surprise guest DJs.</p>
-            <div class="d-flex justify-content-center gap-3" data-aos="fade-up">
-                <a href="#" class="btn btn-outline-warning rounded-pill px-4"><i class="bi bi-instagram me-2"></i>
-                    Instagram</a>
-                <a href="#" class="btn btn-outline-warning rounded-pill px-4"><i class="bi bi-twitter-x me-2"></i>
-                    Twitter</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer same as index -->
     <footer>
@@ -239,20 +234,20 @@
                     <p class="text-white-50">Connecting music lovers through the timeless experience of analog sound and
                         premium hospitality.</p>
                     <div class="d-flex gap-3 mt-4">
-                        <a href="#" class="fs-4"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="fs-4"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 small text-uppercase ls-1">Quick Links</h5>
                     <a href="about.html" class="footer-link">About Us</a>
                     <a href="shop.html" class="footer-link">Shop Records</a>
                     <a href="events.html" class="footer-link">Upcoming Events</a>
                     <a href="contact.html" class="footer-link">Contact</a>
                 </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-4">Services</h5>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 small text-uppercase ls-1">Services</h5>
                     <a href="#" class="footer-link">Record Cleaning</a>
                     <a href="#" class="footer-link">Bar Reservation</a>
                     <a href="#" class="footer-link">Private Events</a>
@@ -263,7 +258,7 @@
                     <p class="text-white-50">Join our mailing list for drop alerts and secret events.</p>
                     <form class="mt-3">
                         <div class="input-group">
-                            <input type="email" class="form-control bg-dark border-secondary text-white"
+                            <input type="email" class="form-control"
                                 placeholder="Enter Email">
                             <button class="btn btn-warning px-4" type="submit">Join</button>
                         </div>

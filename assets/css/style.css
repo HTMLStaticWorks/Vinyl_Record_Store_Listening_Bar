@@ -116,6 +116,32 @@ body.light-mode a:hover {
     color: #000;
 }
 
+.view-all-link {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important;
+}
+
+.view-all-link i {
+    transition: var(--transition-smooth);
+}
+
+.view-all-link:hover {
+    color: var(--accent-gold) !important;
+}
+
+.view-all-link:hover i {
+    transform: translateX(8px);
+    color: var(--accent-gold);
+}
+
+[dir="rtl"] .view-all-link:hover i {
+    transform: translateX(-8px);
+}
+
 /* Animations */
 [data-aos="fade-up"] {
     opacity: 0;
@@ -203,7 +229,7 @@ body.light-mode a:hover {
     color: var(--accent-gold) !important;
 }
 
-.login-btn, .signup-btn {
+.login-btn, .signup-btn, .rtl-btn {
     border: 2px solid var(--accent-gold);
     color: var(--accent-gold);
     background: transparent;
@@ -215,6 +241,14 @@ body.light-mode a:hover {
     font-size: 0.8rem;
     letter-spacing: 1.5px;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px; /* Fixed height for perfect alignment */
+}
+
+.rtl-btn {
+    padding: 10px 20px;
 }
 
 .signup-btn {
@@ -222,7 +256,7 @@ body.light-mode a:hover {
     color: #0c0c0c !important;
 }
 
-.login-btn:hover, .signup-btn:hover {
+.login-btn:hover, .signup-btn:hover, .rtl-btn:hover {
     background: var(--accent-gold);
     color: #0c0c0c !important;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
@@ -237,8 +271,8 @@ body.light-mode a:hover {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -311,6 +345,24 @@ body.light-mode .btn-outline-light:hover {
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 }
 
+/* Neutral Stability for Hero Buttons (Fixing Hover Visibility Issues) */
+.hero-section .btn:hover, .hero-content .btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .hero-section .btn-outline-light,
+body.light-mode .hero-content .btn-outline-light {
+    border-color: #000 !important;
+    color: #000 !important;
+}
+
+body.light-mode .hero-section .btn-outline-light:hover,
+body.light-mode .hero-content .btn-outline-light:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
 /* Hero Sections */
 .hero-section {
     height: calc(100vh - var(--nav-height));
@@ -333,7 +385,7 @@ body.light-mode .btn-outline-light:hover {
 }
 
 body.light-mode .hero-section::before {
-    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0.2));
+    background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
 }
 
 body.light-mode .hero-section {
@@ -378,6 +430,26 @@ body.light-mode .glass-hero-box {
     flex-grow: 1;
 }
 
+.audiophile-card {
+    min-height: 450px;
+}
+
+@media (min-width: 992px) {
+    .audiophile-card {
+        height: 500px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .audiophile-card {
+        height: auto;
+    }
+    .audiophile-card .full-height-image-container {
+        height: 350px;
+        min-height: 350px;
+    }
+}
+
 @media (max-width: 991.98px) {
     .full-height-image-container {
         min-height: 300px;
@@ -393,7 +465,7 @@ body.light-mode .glass-hero-box {
 }
 
 .accent-text {
-    color: var(--accent-gold);
+    color: var(--accent-gold) !important;
 }
 
 /* Card Styles */
@@ -414,13 +486,41 @@ body.light-mode .glass-hero-box {
 }
 
 .card-img-top {
-    height: 380px;
+    height: 250px;
     object-fit: cover;
     transition: var(--transition-smooth);
 }
 
 .record-card:hover .card-img-top {
     transform: scale(1.08);
+}
+
+.price-badge {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold) !important;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    display: inline-block;
+}
+
+.record-card:hover .price-badge {
+    background: var(--accent-gold);
+    color: #000 !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    border-color: var(--accent-gold);
+}
+
+body.light-mode .price-badge {
+    background: rgba(212, 175, 55, 0.08);
+}
+
+body.light-mode .record-card:hover .price-badge {
+    color: #fff !important;
 }
 
 .record-img-wrapper {
@@ -472,9 +572,19 @@ body.light-mode .glass-hero-box {
 }
 
 body.light-mode .glass-event-card {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-color: rgba(0, 0, 0, 0.1) !important;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+body.light-mode .parallax-section {
+    background-color: transparent !important;
+}
+
+body.light-mode .parallax-section::before {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 body.light-mode .glass-event-card,
@@ -497,25 +607,260 @@ body.light-mode .glass-event-card p {
 }
 .parallax-section {
     background-attachment: fixed;
-    height: 65vh;
+    min-height: 50vh;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     position: relative;
     color: #ffffff !important;
+    padding: 100px 0; /* Add vertical padding for better spacing */
 }
 
 .parallax-section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
+}
+
+.parallax-section .accent-text {
+    color: var(--accent-gold) !important;
+}
+
+body.light-mode .parallax-section .accent-text {
+    color: var(--accent-gold) !important;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+}
+
+/* Form Styling & Contrast Fixes */
+.form-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.form-control, .form-select {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2) !important;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.light-mode .form-label {
+    color: #333333 !important;
+}
+
+body.light-mode .form-control, 
+body.light-mode .form-select {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+    border: 1px solid #ddd !important;
+}
+
+body.light-mode .form-control::placeholder {
+    color: #999999 !important;
+}
+
+body.light-mode .form-control:focus, 
+body.light-mode .form-select:focus {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05) !important;
+}
+
+/* Authentication Pages (Login/Signup) Contrast Fixes */
+.auth-page .input-group {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    transition: var(--transition-smooth);
+}
+
+.auth-page .input-group:focus-within {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.auth-page .input-group-text {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.auth-page .form-label {
+    color: #ffffff !important;
+    opacity: 0.9;
+}
+
+.auth-page .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.light-mode .auth-page .input-group {
+    background-color: #ffffff !important;
+    border-color: #dddddd !important;
+}
+
+body.light-mode .auth-page .input-group-text {
+    color: #444444 !important;
+}
+
+body.light-mode .auth-page .form-control {
+    color: #121212 !important;
+}
+
+body.light-mode .auth-page .form-control::placeholder {
+    color: #999999 !important;
+}
+
+.auth-form-text {
+    padding-left: 3.2rem;
+}
+
+/* Checkbox Alignment & Visibility Fixes */
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+}
+
+body.light-mode .form-check-input {
+    background-color: #ffffff !important;
+    border-color: #cccccc !important;
+}
+
+body.light-mode .form-check-input:checked {
+    background-color: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
 }
 
 .parallax-section .container {
     position: relative;
     z-index: 2;
+}
+
+.rituals-section {
+    background-color: var(--card-bg);
+}
+
+body.light-mode .rituals-section {
+    background-color: #f9f9f9 !important;
+}
+
+.team-member-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+body.light-mode .booking-section {
+    background-image: none !important;
+    background-color: #ffffff !important;
+}
+
+body.light-mode .booking-section::before {
+    background: transparent !important;
+}
+
+.team-member-img:hover {
+    transform: scale(1.05);
+}
+
+/* Search Section */
+.search-bar-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color) !important;
+    transition: var(--transition-smooth);
+}
+
+.search-bar-wrapper:hover,
+.search-bar-wrapper:focus-within {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.2) !important;
+    transform: translateY(-2px);
+}
+
+.search-bar-wrapper .bi-search {
+    transition: var(--transition-smooth);
+}
+
+.search-bar-wrapper:hover .bi-search,
+.search-bar-wrapper:focus-within .bi-search {
+    color: var(--accent-gold) !important;
+    transform: scale(1.1);
+}
+
+.search-bar-wrapper input {
+    color: var(--text-primary) !important;
+}
+
+.search-bar-wrapper input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.custom-select-pill {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: var(--text-primary) !important;
+    border-radius: 50px !important;
+    padding: 8px 35px 8px 16px !important;
+    font-size: 0.9rem !important;
+    transition: var(--transition-smooth);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-position: right 12px center !important;
+    background-size: 12px !important;
+}
+
+body.light-mode .custom-select-pill {
+    background-color: #ffffff !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+.custom-select-pill:hover,
+.custom-select-pill:focus {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+/* Promotion Section */
+.promo-section .promo-icon {
+    transform: rotate(-15deg);
+    color: #000000;
+}
+
+.promo-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+    transition: var(--transition-smooth) !important;
+    font-weight: 700 !important;
+}
+
+.promo-btn:hover {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+    transform: scale(1.05);
 }
 
 /* Event Cards */
@@ -528,9 +873,41 @@ body.light-mode .glass-event-card p {
     color: var(--text-primary);
 }
 
+@media (max-width: 767.98px) {
+    .event-card {
+        padding: 1.5rem !important;
+    }
+    .row.g-4 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
 .event-card:hover {
     border-color: var(--accent-gold);
     transform: translateX(10px);
+}
+
+.event-date {
+    min-width: 80px;
+    line-height: 1;
+}
+
+.event-date .h2 {
+    margin-bottom: 2px !important;
+    line-height: 1 !important;
+    font-size: 2.5rem !important;
+}
+
+.event-date span:last-child {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.event-info h4 {
+    margin-bottom: 5px !important;
+    line-height: 1.2 !important;
 }
 
 /* Auth Pages */
@@ -540,7 +917,7 @@ body.light-mode .glass-event-card p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .auth-card {
@@ -551,6 +928,18 @@ body.light-mode .glass-event-card p {
     max-width: 500px;
     box-shadow: 0 40px 80px rgba(0,0,0,0.3);
     border: 1px solid var(--border-color);
+    margin: 2rem auto;
+}
+
+@media (max-width: 768px) {
+    .auth-page {
+        padding: 0.5rem;
+    }
+    .auth-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 25px;
+        margin: 1rem auto;
+    }
 }
 
 /* Testimonial Cards */
@@ -644,6 +1033,7 @@ body.light-mode .text-white-50 {
 body.light-mode .btn-outline-light {
     color: var(--text-primary) !important;
     border-color: var(--text-primary) !important;
+    background: transparent !important;
 }
 
 body.light-mode .btn-outline-light:hover {
@@ -655,31 +1045,40 @@ body.light-mode .btn-outline-light:hover {
    DARK-SECTION PROTECTION (MAX PRIORITY)
    Ensures text stays white on images
 ------------------------------------------- */
-.hero-section {
-    color: #ffffff;
-}
-
-body.light-mode .hero-section,
-body.light-mode .hero-section * {
-    color: var(--text-primary) !important;
-}
-
-.parallax-section {
+.hero-section h1,
+.hero-section p, 
+.parallax-section h1,
+.parallax-section h2,
+.parallax-section p {
     color: #ffffff !important;
 }
 
-body.light-mode .parallax-section,
-body.light-mode .parallax-section *:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
-body.light-mode .parallax-section h1:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
-body.light-mode .parallax-section h2:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
-body.light-mode .parallax-section p:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *),
-body.light-mode .parallax-section .text-white:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *) {
-    color: #ffffff !important;
+/* Ensure sub-content (lead text) has good visibility on noisy images */
+.hero-section .lead {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.hero-section *, 
-.parallax-section *:not(.glass-event-card *, .record-card *, .event-card *, .testimonial-card *) {
-    color: #ffffff;
+body.light-mode .hero-section .lead {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+/* Specific visibility for buttons in noisy hero area */
+.hero-section .btn {
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    font-weight: 700 !important;
+}
+
+.hero-section .btn-outline-light {
+    border-width: 2px !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+body.light-mode .hero-section .btn-outline-light {
+    color: #000000 !important;
+    border-color: #000000 !important;
 }
 
 /* BUT Cards inside those sections must still follow the theme */
@@ -703,8 +1102,14 @@ body.light-mode .event-card p {
 
 /* Restore gold accent in cards */
 body.light-mode .record-card .accent-text,
-body.light-mode .event-card .accent-text {
+body.light-mode .event-card .accent-text,
+body.light-mode .accent-text {
     color: var(--accent-gold) !important;
+}
+
+body.light-mode footer h5 {
+    color: var(--accent-gold) !important;
+    font-weight: 700 !important;
 }
 
 /* Section BG Adjustments */
@@ -731,6 +1136,11 @@ body.light-mode .bg-black {
     background: var(--bg-color) !important;
     color: var(--text-primary) !important;
     border: 1px solid var(--border-color) !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.8 !important;
 }
 
 .form-control:focus {
@@ -836,4 +1246,45 @@ body.light-mode .bg-black {
 #cart-toast i {
     color: var(--accent-gold);
     font-size: 1.5rem;
+}
+
+/* Footer Social Icons Hover Effects */
+.footer-social-link {
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+.footer-social-link:hover {
+    color: var(--accent-gold) !important;
+    transform: translateY(-5px);
+}
+
+body.light-mode .footer-social-link {
+    color: #121212 !important;
+}
+
+body.light-mode .footer-social-link:hover {
+    color: var(--accent-gold) !important;
+}
+
+.footer-link {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: var(--transition-smooth);
+}
+
+.footer-link:hover {
+    color: var(--accent-gold) !important;
+    padding-left: 5px;
+}
+
+body.light-mode .footer-link {
+    color: #444444 !important;
+}
+
+body.light-mode .footer-link:hover {
+    color: var(--accent-gold) !important;
 }

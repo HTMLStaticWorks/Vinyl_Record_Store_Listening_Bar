@@ -45,7 +45,7 @@
                         <button class="theme-toggle-btn border-0 d-none d-lg-flex">
                             <i class="bi bi-sun-fill"></i>
                         </button>
-                        <a href="#" id="rtlToggle" class="btn btn-outline-light rounded-pill px-3 py-1 btn-sm">
+                        <a href="#" id="rtlToggle" class="rtl-btn">
                             <span id="rtlText" class="fw-bold">RTL</span>
                         </a>
                         <a href="login.html" class="login-btn">Login</a>
@@ -60,61 +60,62 @@
     <section class="hero-section"
         style="background-image: url('https://images.pexels.com/photos/14018171/pexels-photo-14018171.jpeg');">
         <div class="container hero-content text-center">
-            <div class="glass-hero-box p-5 rounded-5" data-aos="fade-up">
-                <h1 class="display-3 fw-bold mb-3">Curated Collection</h1>
-                <p class="lead mb-0 mx-auto" style="max-width: 800px;">
-                    Discover our expertly curated selection of rare pressings, timeless classics, and modern
-                    masterpieces.
-                    From the warm grooves of 60s jazz to the driving beats of contemporary techno, every record in our
-                    collection is handpicked for quality. Explore our sanctuary and find the next soul-stirring addition
-                    to your personal library.
-                </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up">
+                    <h1 class="hero-title fw-bold text-white mb-3">Curated <span class="accent-text">Collection</span>
+                    </h1>
+                    <p class="lead text-white-50 mb-0 fs-5 mx-auto opacity-75" style="max-width: 900px;">
+                        Discover our expertly curated selection of rare pressings, timeless classics, and modern
+                        masterpieces.
+                        From the warm grooves of 60s jazz to the driving beats of contemporary techno, every record in
+                        our
+                        collection is handpicked for quality. Explore our sanctuary and find the next soul-stirring
+                        addition
+                        to your personal library.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. Search Section -->
-    <section class="py-5 bg-dark border-bottom border-secondary">
+    <!-- 2. Search & Filter Bar -->
+    <section class="py-3 border-bottom border-secondary bg-dark sticky-top search-filter-bar"
+        style="top: 72px; z-index: 999;">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8" data-aos="fade-up">
-                    <div
-                        class="input-group input-group-lg bg-dark rounded-pill overflow-hidden border border-secondary shadow-lg">
-                        <span class="input-group-text bg-transparent border-0 text-white-50 ms-3"><i
+            <div class="d-flex flex-wrap align-items-center gap-3 gap-lg-4">
+                <!-- Search Component -->
+                <div class="flex-grow-1" style="min-width: 250px;">
+                    <div class="input-group rounded-pill overflow-hidden shadow-sm search-bar-wrapper">
+                        <span class="input-group-text bg-transparent border-0 text-white-50 ms-2"><i
                                 class="bi bi-search"></i></span>
                         <input type="text" id="recordSearch"
-                            class="form-control bg-transparent border-0 text-white py-4 shadow-none fs-5"
+                            class="form-control bg-transparent border-0 py-2 shadow-none"
                             placeholder="Search by Artist, Title or Genre...">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 2. Filters -->
-    <section class="py-4 border-bottom border-secondary bg-dark sticky-top" style="top: 70px; z-index: 10;">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <!-- Filters Component -->
                 <div class="d-flex align-items-center gap-3">
-                    <span class="text-white-50 small">Filter By:</span>
-                    <select id="genreFilter"
-                        class="form-select bg-dark text-white border-secondary rounded-pill w-auto btn-sm">
-                        <option value="all">All Genres</option>
-                        <option value="jazz">Jazz</option>
-                        <option value="rock">Rock</option>
-                        <option value="electronic">Electronic</option>
-                        <option value="soul">Soul & Funk</option>
-                        <option value="hip-hop">Hip-Hop</option>
-                    </select>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <span class="text-white-50 small">Sort By:</span>
-                    <select class="form-select bg-dark text-white border-secondary rounded-pill w-auto btn-sm">
-                        <option>Newest First</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Artist A-Z</option>
-                    </select>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="text-white-50 small d-none d-lg-inline">Filter:</span>
+                        <select id="genreFilter" class="form-select custom-select-pill">
+                            <option value="all">All Genres</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="rock">Rock</option>
+                            <option value="electronic">Electronic</option>
+                            <option value="soul">Soul & Funk</option>
+                            <option value="hip-hop">Hip-Hop</option>
+                        </select>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="text-white-50 small d-none d-lg-inline">Sort:</span>
+                        <select class="form-select custom-select-pill">
+                            <option>Newest First</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Artist A-Z</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,7 +149,7 @@
                             <img src="https://images.pexels.com/photos/28248179/pexels-photo-28248179.jpeg" alt="Vinyl">
                         </div>
                         <div class="record-info">
-                            <h5 class="fw-bold mb-1 record-title">Dark Side of the Moon</h5>
+                            <h5 class="fw-bold mb-1 record-title">Lunar Echo</h5>
                             <p class="text-white-50 small mb-2 record-artist">Pink Floyd</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="accent-text fw-bold">$32.00</span>
@@ -163,7 +164,8 @@
                     data-aos-delay="200">
                     <div class="record-card">
                         <div class="record-img-wrapper">
-                            <img src="https://images.pexels.com/photos/19716297/pexels-photo-19716297.jpeg" alt="Vinyl">
+                            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=600&q=80"
+                                alt="Vinyl">
                         </div>
                         <div class="record-info">
                             <h5 class="fw-bold mb-1 record-title">Daft Punk</h5>
@@ -263,18 +265,16 @@
     </section>
 
     <!-- 4. Promotion Section -->
-    <section class="py-5 bg-warning text-dark overflow-hidden">
-        <div class="container py-4 position-relative">
-            <div class="row align-items-center">
-                <div class="col-md-8" data-aos="fade-right">
-                    <h2 class="display-4 fw-bold mb-3">Limited Edition White Vinyl</h2>
-                    <p class="lead mb-4">Only 50 copies left of the exclusive 'Abbey Road' anniversary press. Don't miss
-                        out on this collector's item.</p>
-                    <a href="#" class="btn btn-dark btn-lg rounded-pill px-5">Pre-Order Now</a>
-                </div>
-                <div class="col-md-4 text-center d-none d-md-block" data-aos="fade-left">
-                    <i class="bi bi-megaphone display-1 opacity-25"
-                        style="transform: rotate(-15deg); display: block;"></i>
+    <section class="py-5 bg-warning text-dark overflow-hidden promo-section">
+        <div class="container py-5 text-center" data-aos="zoom-in">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <i class="bi bi-megaphone display-1 mb-4 d-inline-block opacity-25 promo-icon"></i>
+                    <h2 class="display-3 fw-bold mb-3">Limited Edition White Vinyl</h2>
+                    <p class="lead mb-5 mx-auto" style="max-width: 700px;">Only 50 copies left of the exclusive 'Abbey
+                        Road'
+                        anniversary press. Don't miss out on this collector's item.</p>
+                    <a href="#" class="btn btn-dark btn-lg rounded-pill px-5 promo-btn">PRE-ORDER NOW</a>
                 </div>
             </div>
         </div>
@@ -282,11 +282,14 @@
 
     <!-- 5. CTA -->
     <section class="py-5">
-        <div class="container py-5 text-center" data-aos="zoom-in">
-            <h3 class="fw-bold mb-4">Didn't find what you're looking for?</h3>
-            <p class="text-white-50 mb-4 px-lg-5">We can special order almost any record currently in print. Get in
-                touch with our expert buyers.</p>
-            <a href="contact.html" class="btn btn-outline-warning rounded-pill px-4">Contact Our Buyers</a>
+        <div class="container py-5">
+            <div class="glass-event-card text-center py-5 px-4 mx-auto" style="max-width: 900px;" data-aos="zoom-in">
+                <h3 class="display-5 fw-bold mb-4">Didn't find what you're looking for?</h3>
+                <p class="lead mb-5 px-lg-5 opacity-75">We can special order almost any record currently in print. Get
+                    in
+                    touch with our expert buyers.</p>
+                <a href="contact.html" class="btn btn-warning rounded-pill px-5 py-3 fw-bold">CONTACT OUR BUYERS</a>
+            </div>
         </div>
     </section>
 
@@ -302,20 +305,20 @@
                     <p class="text-white-50">Connecting music lovers through the timeless experience of analog sound and
                         premium hospitality.</p>
                     <div class="d-flex gap-3 mt-4">
-                        <a href="#" class="fs-4"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="fs-4"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4 footer-social-link"><i class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 small text-uppercase ls-1">Quick Links</h5>
                     <a href="about.html" class="footer-link">About Us</a>
                     <a href="shop.html" class="footer-link">Shop Records</a>
                     <a href="events.html" class="footer-link">Upcoming Events</a>
                     <a href="contact.html" class="footer-link">Contact</a>
                 </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-4">Services</h5>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 small text-uppercase ls-1">Services</h5>
                     <a href="#" class="footer-link">Record Cleaning</a>
                     <a href="#" class="footer-link">Bar Reservation</a>
                     <a href="#" class="footer-link">Private Events</a>
@@ -326,8 +329,7 @@
                     <p class="text-white-50">Join our mailing list for drop alerts and secret events.</p>
                     <form class="mt-3">
                         <div class="input-group">
-                            <input type="email" class="form-control bg-dark border-secondary text-white"
-                                placeholder="Enter Email">
+                            <input type="email" class="form-control" placeholder="Enter Email">
                             <button class="btn btn-warning px-4" type="submit">Join</button>
                         </div>
                     </form>
