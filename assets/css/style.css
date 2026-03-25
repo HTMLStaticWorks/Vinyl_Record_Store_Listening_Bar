@@ -279,6 +279,16 @@ body.light-mode a:hover {
     justify-content: center;
     cursor: pointer;
     transition: var(--transition-smooth);
+    padding: 0 !important;
+}
+
+.rtl-btn {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 50px;
 }
 
 .theme-toggle-btn:hover {
@@ -385,11 +395,11 @@ body.light-mode .hero-content .btn-outline-light:hover {
 }
 
 body.light-mode .hero-section::before {
-    background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
 }
 
 body.light-mode .hero-section {
-    filter: brightness(1.1);
+    filter: none;
 }
 
 .glass-hero-box {
@@ -555,6 +565,23 @@ body.light-mode .record-card:hover .price-badge {
     object-fit: cover;
 }
 
+.story-img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.story-img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 767.98px) {
+    .story-img {
+        height: 220px;
+    }
+}
+
 /* Special Glass Cards for Parallax/Hero Overlays */
 .glass-event-card {
     background: rgba(0, 0, 0, 0.7) !important;
@@ -579,13 +606,7 @@ body.light-mode .glass-event-card {
     box-shadow: 0 15px 50px rgba(0,0,0,0.1);
 }
 
-body.light-mode .parallax-section {
-    background-color: transparent !important;
-}
-
-body.light-mode .parallax-section::before {
-    background: rgba(255, 255, 255, 0.3);
-}
+/* Parallax/Hero Background Overrides moved to light mode section */
 
 body.light-mode .glass-event-card,
 body.light-mode .glass-event-card h1,
@@ -771,12 +792,11 @@ body.light-mode .rituals-section {
 }
 
 body.light-mode .booking-section {
-    background-image: none !important;
-    background-color: #ffffff !important;
+    background-color: var(--bg-color) !important;
 }
 
 body.light-mode .booking-section::before {
-    background: transparent !important;
+    background: rgba(255, 255, 255, 0.4) !important;
 }
 
 .team-member-img:hover {
@@ -829,10 +849,20 @@ body.light-mode .booking-section::before {
     background-size: 12px !important;
 }
 
+.custom-select-pill option {
+    background-color: #1a1a1a;
+    color: var(--text-primary);
+}
+
 body.light-mode .custom-select-pill {
     background-color: #ffffff !important;
     border-color: rgba(0,0,0,0.1) !important;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+body.light-mode .custom-select-pill option {
+    background-color: #ffffff;
+    color: #121212;
 }
 
 .custom-select-pill:hover,
@@ -917,28 +947,37 @@ body.light-mode .custom-select-pill {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2.5rem 1rem;
+    overflow-x: hidden;
 }
 
 .auth-card {
     background: var(--card-bg);
-    padding: 4rem;
+    padding: 3.5rem 3rem;
     border-radius: 30px;
     width: 100%;
     max-width: 500px;
     box-shadow: 0 40px 80px rgba(0,0,0,0.3);
     border: 1px solid var(--border-color);
-    margin: 2rem auto;
+    margin: auto;
+    transition: var(--transition-smooth);
 }
 
-@media (max-width: 768px) {
-    .auth-page {
-        padding: 0.5rem;
-    }
+/* Tablet & Mobile Overrides */
+@media (max-width: 1024.98px) {
     .auth-card {
-        padding: 2.5rem 1.5rem;
-        border-radius: 25px;
-        margin: 1rem auto;
+        padding: 2.5rem 2rem;
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .auth-card {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+    }
+    .auth-page {
+        padding: 1.5rem 0.75rem;
     }
 }
 
@@ -1041,6 +1080,44 @@ body.light-mode .btn-outline-light:hover {
     color: var(--bg-color) !important;
 }
 
+body.light-mode .btn-outline-warning {
+    color: #000000 !important;
+    border-color: var(--accent-gold) !important;
+    background-color: transparent !important;
+}
+
+body.light-mode .btn-outline-warning:hover {
+    background-color: var(--accent-gold) !important;
+    color: #000000 !important;
+}
+
+/* Ensure background overlays in light mode win over base styles */
+body.light-mode .hero-section::before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)) !important;
+}
+
+body.light-mode .parallax-section::before {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Force dark text for visibility in light mode within these sections */
+body.light-mode .hero-section h1,
+body.light-mode .hero-section h2,
+body.light-mode .hero-section h3,
+body.light-mode .hero-section h4,
+body.light-mode .hero-section h5,
+body.light-mode .hero-section h6,
+body.light-mode .hero-section p,
+body.light-mode .parallax-section h1,
+body.light-mode .parallax-section h2,
+body.light-mode .parallax-section h3,
+body.light-mode .parallax-section h4,
+body.light-mode .parallax-section h5,
+body.light-mode .parallax-section h6,
+body.light-mode .parallax-section p {
+    color: var(--text-primary) !important;
+}
+
 /* -------------------------------------------
    DARK-SECTION PROTECTION (MAX PRIORITY)
    Ensures text stays white on images
@@ -1074,6 +1151,12 @@ body.light-mode .hero-section .lead {
     border-width: 2px !important;
     color: #ffffff !important;
     border-color: #ffffff !important;
+}
+
+.hero-section .btn-outline-light:hover,
+.hero-section a.btn-outline-light:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
 body.light-mode .hero-section .btn-outline-light {
@@ -1119,6 +1202,19 @@ body.light-mode .bg-black {
     color: var(--text-primary) !important;
 }
 
+body.light-mode .custom-search-pill input {
+    color: #121212 !important;
+}
+
+body.light-mode .custom-search-pill input::placeholder {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+body.light-mode .custom-search-pill .bi-search,
+body.light-mode .custom-search-pill i {
+    color: #121212 !important;
+}
+
 /* Modal Styling */
 .modal-content {
     background: var(--card-bg);
@@ -1132,15 +1228,33 @@ body.light-mode .bg-black {
 }
 
 /* Form Controls */
-.form-control {
+.form-control, .form-select {
     background: var(--bg-color) !important;
     color: var(--text-primary) !important;
     border: 1px solid var(--border-color) !important;
 }
 
+.form-select option {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+body.light-mode .form-select option {
+    background-color: #ffffff;
+    color: #121212;
+}
+
 .form-control::placeholder {
     color: var(--text-secondary) !important;
     opacity: 0.8 !important;
+}
+
+body.light-mode .form-label {
+    color: #121212 !important;
+}
+
+body.light-mode .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.55) !important;
 }
 
 .form-control:focus {
@@ -1165,8 +1279,13 @@ body.light-mode .bg-black {
         font-size: 0.75rem;
     }
     .theme-toggle-btn {
-        width: 35px;
-        height: 35px;
+        width: 38px !important;
+        height: 38px !important;
+    }
+    .rtl-btn {
+        height: 38px !important;
+        padding: 0 15px !important;
+        font-size: 0.85rem;
     }
 }
 
