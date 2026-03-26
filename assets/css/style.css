@@ -1456,4 +1456,20 @@ body.light-mode .hero-section .accent-text {
     color: #000000 !important;
 }
 
+/* Auth Pages: Unified Small Text Size */
+.auth-page .form-text, 
+.auth-page .form-check-label, 
+.auth-page p.small,
+.auth-page .smaller,
+.auth-page p.smaller {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    display: block; /* Ensure they have enough room and consistent block context if needed */
+}
+
+.auth-page .form-check-label {
+    display: inline-block; /* Reset for checkbox labels */
+}
+
+
 
