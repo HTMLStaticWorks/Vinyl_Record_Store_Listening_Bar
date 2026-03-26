@@ -375,7 +375,8 @@ body.light-mode .hero-content .btn-outline-light:hover {
 
 /* Hero Sections */
 .hero-section {
-    height: calc(100vh - var(--nav-height));
+    height: 70vh;
+    min-height: 450px;
     display: flex;
     align-items: center;
     background-size: cover;
@@ -385,11 +386,12 @@ body.light-mode .hero-content .btn-outline-light:hover {
     background-color: var(--bg-color);
 }
 
+
 .hero-section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.6));
     transition: var(--transition-smooth);
     z-index: 1;
 }
@@ -421,7 +423,7 @@ body.light-mode .glass-hero-box {
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 /* Side-by-Side Image Utilities */
@@ -637,6 +639,19 @@ body.light-mode .glass-event-card p {
     color: #ffffff !important;
     padding: 100px 0; /* Add vertical padding for better spacing */
 }
+.parallax.hero-section {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff !important;
+    padding: 0; /* Adjusted for compact design */
+}
 
 .parallax-section::before {
     content: '';
@@ -841,12 +856,13 @@ body.light-mode .booking-section::before {
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     color: var(--text-primary) !important;
     border-radius: 50px !important;
-    padding: 8px 35px 8px 16px !important;
+    padding: 8px 40px 8px 16px !important;
     font-size: 0.9rem !important;
     transition: var(--transition-smooth);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
-    background-position: right 12px center !important;
-    background-size: 12px !important;
+    background-position: right 15px center !important;
+    background-size: 10px !important;
+    background-repeat: no-repeat !important;
 }
 
 .custom-select-pill option {
@@ -858,6 +874,9 @@ body.light-mode .custom-select-pill {
     background-color: #ffffff !important;
     border-color: rgba(0,0,0,0.1) !important;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 15px center !important;
+    background-size: 10px !important;
 }
 
 body.light-mode .custom-select-pill option {
@@ -1093,29 +1112,11 @@ body.light-mode .btn-outline-warning:hover {
 
 /* Ensure background overlays in light mode win over base styles */
 body.light-mode .hero-section::before {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)) !important;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.75)) !important;
 }
 
 body.light-mode .parallax-section::before {
-    background: rgba(255, 255, 255, 0.3) !important;
-}
-
-/* Force dark text for visibility in light mode within these sections */
-body.light-mode .hero-section h1,
-body.light-mode .hero-section h2,
-body.light-mode .hero-section h3,
-body.light-mode .hero-section h4,
-body.light-mode .hero-section h5,
-body.light-mode .hero-section h6,
-body.light-mode .hero-section p,
-body.light-mode .parallax-section h1,
-body.light-mode .parallax-section h2,
-body.light-mode .parallax-section h3,
-body.light-mode .parallax-section h4,
-body.light-mode .parallax-section h5,
-body.light-mode .parallax-section h6,
-body.light-mode .parallax-section p {
-    color: var(--text-primary) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* -------------------------------------------
@@ -1130,10 +1131,30 @@ body.light-mode .parallax-section p {
     color: #ffffff !important;
 }
 
+body.light-mode .hero-section h1,
+body.light-mode .hero-section p,
+body.light-mode .parallax-section h1,
+body.light-mode .parallax-section p,
+body.light-mode .parallax-section h2,
+body.light-mode .parallax-section h3,
+body.light-mode .parallax-section h4,
+body.light-mode .parallax-section h5,
+body.light-mode .parallax-section h6,
+body.light-mode .hero-section .text-white,
+body.light-mode .hero-section .text-white-50,
+body.light-mode .parallax-section .text-white,
+body.light-mode .parallax-section .text-white-50 {
+    color: #000000 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+
 /* Ensure sub-content (lead text) has good visibility on noisy images */
 .hero-section .lead {
-    color: rgba(255, 255, 255, 0.9) !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    color: #ffffff !important;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+    font-weight: 500;
 }
 
 body.light-mode .hero-section .lead {
@@ -1229,7 +1250,7 @@ body.light-mode .custom-search-pill i {
 
 /* Form Controls */
 .form-control, .form-select {
-    background: var(--bg-color) !important;
+    background-color: var(--bg-color) !important;
     color: var(--text-primary) !important;
     border: 1px solid var(--border-color) !important;
 }
@@ -1407,3 +1428,32 @@ body.light-mode .footer-link {
 body.light-mode .footer-link:hover {
     color: var(--accent-gold) !important;
 }
+
+/* Reduced Shop Hero Size */
+#shop-page .hero-section {
+    height: 60vh !important;
+    min-height: 480px !important;
+}
+
+#shop-page .hero-content {
+    padding: 80px 0 !important;
+}
+
+.search-filter-bar {
+    margin-bottom: 5rem !important;
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+#shop-page .hero-title {
+    font-size: 3.5rem !important;
+}
+
+/* Light mode contrast fix for Hero accent text */
+body.light-mode .hero-section .accent-text {
+    color: #000000 !important;
+}
+
+
