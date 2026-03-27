@@ -1045,11 +1045,22 @@ body.light-mode .testimonial-card .text-white-50 {
 /* Footer */
 footer {
     background: var(--card-bg);
-    padding: 85px 0 35px;
-    margin-top: 55px;
+    padding: 60px 0 35px;
+    margin-top: 0;
     color: var(--text-primary);
     border-top: 2px solid var(--border-color);
 }
+
+/* Tighten Layout: Ensure consistent small gap between sections and footer */
+body:not(.auth-page) section:last-of-type {
+    padding-bottom: 25px !important;
+}
+
+body:not(.auth-page) section:last-of-type .container {
+    padding-bottom: 25px !important;
+}
+
+
 
 footer a, .footer-link {
     color: var(--text-secondary);
