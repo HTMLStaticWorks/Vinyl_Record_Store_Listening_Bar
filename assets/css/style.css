@@ -1,5 +1,5 @@
 /* 
-    Vinyl Record Store & Listening Bar
+    Vinyl Record Store & Listening Experience
     Theme: Retro-Modern / Nostalgic / Premium
     Main CSS
 */
@@ -251,9 +251,14 @@ body.light-mode a:hover {
     padding: 10px 20px;
 }
 
-.signup-btn {
+.login-btn {
     background: var(--accent-gold);
     color: #0c0c0c !important;
+}
+
+.signup-btn {
+    background: transparent;
+    color: var(--accent-gold) !important;
 }
 
 .login-btn:hover, .signup-btn:hover, .rtl-btn:hover {
@@ -262,9 +267,14 @@ body.light-mode a:hover {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
-.signup-btn:hover {
+.login-btn:hover {
     background: transparent;
     color: var(--accent-gold) !important;
+}
+
+.signup-btn:hover {
+    background: var(--accent-gold);
+    color: #0c0c0c !important;
 }
 
 .theme-toggle-btn {

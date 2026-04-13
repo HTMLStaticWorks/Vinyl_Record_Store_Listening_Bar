@@ -31,7 +31,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navContent">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
@@ -46,7 +46,6 @@
                             <span id="rtlText" class="fw-bold">RTL</span>
                         </a>
                         <a href="login.html" class="login-btn">Login</a>
-                        <a href="signup.html" class="signup-btn">Sign Up</a>
                     </div>
                 </div>
             </div>
@@ -92,26 +91,35 @@
                         <form id="contactForm">
                             <div class="row g-4 text-start">
                                 <div class="col-md-6">
-                                    <label class="form-label text-white-50">Full Name</label>
-                                    <input type="text" class="form-control bg-dark border-secondary text-white p-3" placeholder="John Doe" required>
+                                    <label class="form-label text-white-50 small text-uppercase fw-bold ls-1 mb-1">Full Name</label>
+                                    <div class="input-group bg-dark border border-secondary rounded-pill overflow-hidden">
+                                        <span class="input-group-text bg-transparent border-0 text-white-50 ms-2"><i class="bi bi-person"></i></span>
+                                        <input type="text" class="form-control bg-transparent border-0 text-white py-3 shadow-none" placeholder="John Doe" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label text-white-50">Email Address</label>
-                                    <input type="email" class="form-control bg-dark border-secondary text-white p-3" placeholder="john@example.com" required>
+                                    <label class="form-label text-white-50 small text-uppercase fw-bold ls-1 mb-1">Email Address</label>
+                                    <div class="input-group bg-dark border border-secondary rounded-pill overflow-hidden">
+                                        <span class="input-group-text bg-transparent border-0 text-white-50 ms-2"><i class="bi bi-envelope"></i></span>
+                                        <input type="email" class="form-control bg-transparent border-0 text-white py-3 shadow-none" placeholder="john@example.com" required>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label text-white-50">Subject</label>
-                                    <select class="form-select bg-dark border-secondary text-white p-3" required>
-                                        <option value="">Choose an option...</option>
-                                        <option value="shop">Record Shop Inquiry</option>
-                                        <option value="bar">Bar Reservation</option>
-                                        <option value="events">Events & Booking</option>
-                                        <option value="feedback">General Feedback</option>
-                                    </select>
+                                    <label class="form-label text-white-50 small text-uppercase fw-bold ls-1 mb-1">Subject</label>
+                                    <div class="input-group bg-dark border border-secondary rounded-pill overflow-hidden">
+                                        <span class="input-group-text bg-transparent border-0 text-white-50 ms-2"><i class="bi bi-list"></i></span>
+                                        <select class="form-select bg-transparent border-0 text-white py-3 shadow-none" required>
+                                            <option value="">Choose an option...</option>
+                                            <option value="shop">Record Shop Inquiry</option>
+                                            <option value="listening">Listening Session</option>
+                                            <option value="events">Events & Membership</option>
+                                            <option value="feedback">General Feedback</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label text-white-50">Your Message</label>
-                                    <textarea class="form-control bg-dark border-secondary text-white p-3" rows="6" placeholder="How can we help you?" required></textarea>
+                                    <label class="form-label text-white-50 small text-uppercase fw-bold ls-1 mb-1">Your Message</label>
+                                    <textarea class="form-control bg-dark border-secondary text-white p-3 rounded-4" rows="6" placeholder="How can we help you?" required></textarea>
                                 </div>
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn btn-warning btn-lg rounded-pill px-5 fw-bold py-3 w-100">Send Message</button>
@@ -139,7 +147,7 @@
                     <div class="glass-event-card text-center">
                         <i class="bi bi-telephone accent-text fs-1 mb-3 d-block"></i>
                         <h4 class="fw-bold">Call Us</h4>
-                        <p>Shop: +1 (555) 789-0123<br>Bar Reservations: +1 (555) 321-4567</p>
+                        <p>Shop: +1 (555) 789-0123<br>Listening Sessions: +1 (555) 321-4567</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -186,7 +194,7 @@
                         <span>VINYL <span class="accent-text">VIBES</span></span>
                     </a>
                     <p class="text-white-50">Connecting music lovers through the timeless experience of analog sound and
-                        premium hospitality.</p>
+                        pure audiophile culture.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="fs-4 footer-social-link"><i class="bi bi-instagram"></i></a>
                         <a href="#" class="fs-4 footer-social-link"><i class="bi bi-facebook"></i></a>
@@ -197,14 +205,14 @@
                     <h5 class="fw-bold mb-4 small text-uppercase ls-1">Quick Links</h5>
                     <a href="about.html" class="footer-link">About Us</a>
                     <a href="shop.html" class="footer-link">Shop Records</a>
-                    <a href="events.html" class="footer-link">Upcoming Events</a>
+                    <a href="events.html" class="footer-link">Events</a>
                     <a href="contact.html" class="footer-link">Contact</a>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h5 class="fw-bold mb-4 small text-uppercase ls-1">Services</h5>
                     <a href="#" class="footer-link">Record Cleaning</a>
-                    <a href="#" class="footer-link">Bar Reservation</a>
-                    <a href="#" class="footer-link">Private Events</a>
+                    <a href="home2.html" class="footer-link">Listening Session</a>
+                    <a href="#" class="footer-link">Private Listening</a>
                     <a href="login.html" class="footer-link">Member Area</a>
                 </div>
                 <div class="col-lg-4">

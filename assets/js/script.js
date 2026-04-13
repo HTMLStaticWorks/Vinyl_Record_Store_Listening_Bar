@@ -1,5 +1,5 @@
 /**
- * Vinyl Record Store & Listening Bar
+ * Vinyl Vibes | Record Store & Listening Experience
  * Main Scripts
  */
 
