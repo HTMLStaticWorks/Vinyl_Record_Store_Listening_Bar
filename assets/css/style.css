@@ -380,6 +380,7 @@ body.light-mode .hero-content .btn-outline-light:hover {
     min-height: 450px;
     display: flex;
     align-items: center;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -398,7 +399,7 @@ body.light-mode .hero-content .btn-outline-light:hover {
 }
 
 body.light-mode .hero-section::before {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)) !important;
 }
 
 body.light-mode .hero-section {
@@ -989,13 +990,35 @@ body.light-mode .custom-select-pill option {
 
 /* Auth Pages */
 .auth-page {
-    background: var(--bg-color);
+    background-color: var(--bg-color);
+    background-image: url('https://images.unsplash.com/photo-1496293455970-f8581aae0e3c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2.5rem 1rem;
     overflow-x: hidden;
+    position: relative;
+}
+
+.auth-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 0;
+}
+
+body.light-mode.auth-page::before {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.auth-page .container {
+    position: relative;
+    z-index: 1;
 }
 
 .auth-card {
@@ -1151,11 +1174,11 @@ body.light-mode .btn-outline-warning:hover {
 
 /* Ensure background overlays in light mode win over base styles */
 body.light-mode .hero-section::before {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.75)) !important;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75)) !important;
 }
 
 body.light-mode .parallax-section::before {
-    background: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* -------------------------------------------
@@ -1363,8 +1386,16 @@ body.light-mode .form-control::placeholder {
 
 @media (max-width: 767.98px) {
     .hero-title { font-size: 2.5rem; }
-    .hero-section { height: auto; padding: 100px 0; }
-    .parallax-section { height: auto; padding: 80px 0; }
+    .hero-section { 
+        height: auto; 
+        padding: 100px 0; 
+        background-attachment: scroll !important; 
+    }
+    .parallax-section { 
+        height: auto; 
+        padding: 80px 0; 
+        background-attachment: scroll !important; 
+    }
 }
 
 /* Cart Icon & Counter */
