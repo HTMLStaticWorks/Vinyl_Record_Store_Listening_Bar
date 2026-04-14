@@ -704,6 +704,7 @@ body.light-mode .parallax-section .accent-text {
     font-weight: 600;
     margin-bottom: 0.5rem;
     transition: var(--transition-smooth);
+    padding-inline-start: 1rem;
 }
 
 .form-control, .form-select {
@@ -766,6 +767,7 @@ body.light-mode .form-select:focus {
 .auth-page .form-label {
     color: #ffffff !important;
     opacity: 0.9;
+    padding-inline-start: 1rem;
 }
 
 .auth-page .form-control::placeholder {
@@ -1334,6 +1336,7 @@ body.light-mode .form-select option {
 
 body.light-mode .form-label {
     color: #121212 !important;
+    padding-inline-start: 1rem;
 }
 
 body.light-mode .form-control::placeholder {
