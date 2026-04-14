@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initRTL();
     initTheme();
     initAnimations();
-    initScrollProgress();
     initBackToTop();
     initActiveNav();
     initCart();
@@ -161,24 +160,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /**
- * Scroll Progress Bar
- */
-function initScrollProgress() {
-    const bar = document.createElement('div');
-    bar.className = 'scroll-progress';
-    document.body.appendChild(bar);
-
-    window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (height > 0) {
-            const scrolled = (winScroll / height) * 100;
-            bar.style.width = scrolled + "%";
-        }
-    });
-}
-
-/**
  * Back to Top Button
  */
 function initBackToTop() {
@@ -278,4 +259,21 @@ function showCartToast() {
         }, 3000);
     }
 }
+
+/**
+ * Password Visibility Toggle
+ */
+function togglePassword(inputId, el) {
+    const input = document.getElementById(inputId);
+    const icon = el.querySelector('i');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('bi-eye', 'bi-eye-slash');
+    } else {
+        input.type = 'password';
+        icon.classList.replace('bi-eye-slash', 'bi-eye');
+    }
+}
+
 
