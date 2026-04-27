@@ -1198,15 +1198,22 @@ body.light-mode .parallax-section::before {
    Ensures text stays white on images
 ------------------------------------------- */
 .hero-section h1,
-.hero-section p, 
+.hero-section p,
+.hero-section .text-white,
+.hero-section .text-white-50,
 .parallax-section h1,
 .parallax-section h2,
-.parallax-section p {
+.parallax-section p,
+.parallax-section .text-white,
+.parallax-section .text-white-50 {
     color: #ffffff !important;
+    opacity: 1 !important;
 }
 
 body.light-mode .hero-section h1,
 body.light-mode .hero-section p,
+body.light-mode .hero-section .text-white,
+body.light-mode .hero-section .text-white-50,
 body.light-mode .parallax-section .text-white,
 body.light-mode .parallax-section .text-white-50 {
     color: #ffffff !important;
