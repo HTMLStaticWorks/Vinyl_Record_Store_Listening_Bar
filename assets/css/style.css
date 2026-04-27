@@ -364,14 +364,14 @@ body.light-mode .btn-outline-light:hover {
 
 body.light-mode .hero-section .btn-outline-light,
 body.light-mode .hero-content .btn-outline-light {
-    border-color: #000 !important;
-    color: #000 !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 body.light-mode .hero-section .btn-outline-light:hover,
 body.light-mode .hero-content .btn-outline-light:hover {
-    background-color: #000 !important;
-    color: #fff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
 /* Hero Sections */
@@ -1252,10 +1252,7 @@ body.light-mode .hero-section .lead {
     color: #000000 !important;
 }
 
-body.light-mode .hero-section .btn-outline-light {
-    color: #000000 !important;
-    border-color: #000000 !important;
-}
+/* Removed redundant light-mode override to preserve white color */
 
 /* BUT Cards inside those sections must still follow the theme */
 .record-card *, .event-card * {
